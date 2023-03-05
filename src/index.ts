@@ -22,3 +22,4 @@ export {
   FileExistsSync,
   FileExistsAsync,
 } from "./filesystem";
+export { resolveTsNode, createMatchPathForTsNode } from "./ts-node";

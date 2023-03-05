@@ -11,6 +11,7 @@
     "/src",
     "/lib",
     "register.js",
+    "ts-node-esm.mjs",
     "package.json",
     "CHANGELOG.md",
     "LICENSE",
@@ -37,7 +38,7 @@
     "prettier": "^2.0.5",
     "rimraf": "^2.6.2",
     "ts-jest": "^27.0.7",
-    "ts-node": "^10.7.0",
+    "ts-node": "^10.9.1",
     "typescript": "^4.5.2"
   },
   "dependencies": {
@@ -48,6 +49,7 @@
   "scripts": {
     "start": "cd src && ts-node index.ts",
     "example:node": "yarn build && cd ./example/node && ts-node -r ../../register.js main.ts",
+    "example:ts-node-esm": "yarn build && cd ./example/ts-node-esm && node --loader=../../ts-node-esm.mjs main.ts",
     "example:project": "yarn build && ts-node -r ./register.js -P ./example/project/tsconfig.json ./example/project/main.ts",
     "example:api": "cd example/api && ts-node main.ts",
     "example:perf": "cd example/perf && ts-node main.ts",
