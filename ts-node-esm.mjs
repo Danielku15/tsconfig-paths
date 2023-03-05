@@ -9,6 +9,10 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const tsConfigPaths = esmRequire("./");
 
 const tsNodePath = tsConfigPaths.resolveTsNode(__dirname);
+if(!tsNodePath) {
+  throw new Error('Could not resolve ts-node');
+}
+
 const matchPath = tsConfigPaths.createMatchPathForTsNode();
 
 /** @type {import('ts-node/dist-raw/node-internal-modules-esm-resolve')} */

@@ -31,7 +31,8 @@ export function createMatchPathForTsNode(): MatchPath {
  */
 export function resolveTsNode(cwd: string): string | undefined {
   const candidates = [
-    (join(cwd, "..", "ts-node"), join(cwd, "node_modules", "ts-node")),
+    join(cwd, "..", "ts-node"),
+    join(cwd, "node_modules", "ts-node"),
   ];
 
   return candidates.find(existsSync);
